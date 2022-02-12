@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SwipeButton" customModule="SwipeButton" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="iN0-l3-epB" id="IKr-aD-STL"/>
+                <outlet property="containerViewImage" destination="jGB-AX-SAa" id="yVE-an-Q56"/>
+                <outlet property="swipeView" destination="BhW-MS-Wdt" id="Qwg-30-Nvs"/>
+                <outlet property="swipeViewImage" destination="JKx-jt-8ch" id="F5G-7a-Psv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="677" height="170"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jGB-AX-SAa">
+                    <rect key="frame" x="0.0" y="0.0" width="677" height="170"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhW-MS-Wdt">
+                    <rect key="frame" x="253.5" y="0.0" width="170" height="170"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JKx-jt-8ch">
+                            <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="BhW-MS-Wdt" secondAttribute="height" multiplier="1:1" id="D44-Oo-Xg3"/>
+                        <constraint firstItem="JKx-jt-8ch" firstAttribute="leading" secondItem="BhW-MS-Wdt" secondAttribute="leading" id="nLG-m1-oXP"/>
+                        <constraint firstAttribute="bottom" secondItem="JKx-jt-8ch" secondAttribute="bottom" id="oFa-zG-EGq"/>
+                        <constraint firstItem="JKx-jt-8ch" firstAttribute="top" secondItem="BhW-MS-Wdt" secondAttribute="top" id="uCc-Qr-eb1"/>
+                        <constraint firstAttribute="trailing" secondItem="JKx-jt-8ch" secondAttribute="trailing" id="yX7-TA-Zzs"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="egn-zW-R6M" appends="YES" id="zQo-le-Jx6"/>
+                    </connections>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBrownColor"/>
+            <constraints>
+                <constraint firstItem="BhW-MS-Wdt" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="04F-UP-jWp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jGB-AX-SAa" secondAttribute="trailing" id="LyZ-p8-rZ8"/>
+                <constraint firstAttribute="bottom" secondItem="jGB-AX-SAa" secondAttribute="bottom" id="Upz-VV-wvo"/>
+                <constraint firstItem="BhW-MS-Wdt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dKU-e4-QDT"/>
+                <constraint firstItem="jGB-AX-SAa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fGT-QN-db6"/>
+                <constraint firstItem="BhW-MS-Wdt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jfa-CY-2Kj"/>
+                <constraint firstItem="jGB-AX-SAa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yof-FY-pRh"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="322.46376811594206" y="-175.44642857142856"/>
+        </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="egn-zW-R6M">
+            <connections>
+                <action selector="didStartPanGesture:" destination="-1" id="ghc-5f-pQN"/>
+            </connections>
+        </panGestureRecognizer>
+    </objects>
+    <resources>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

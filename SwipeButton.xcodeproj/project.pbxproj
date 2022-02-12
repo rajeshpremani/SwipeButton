@@ -8,11 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		E3B0017327B817D1005FBD8C /* SwipeButton.h in Headers */ = {isa = PBXBuildFile; fileRef = E3B0017227B817D1005FBD8C /* SwipeButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3B0017A27B818A2005FBD8C /* SwipeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3B0017927B818A2005FBD8C /* SwipeButton.xib */; };
+		E3B0017C27B81959005FBD8C /* SwipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B0017B27B81959005FBD8C /* SwipeButton.swift */; };
+		E3B0017E27B81D2F005FBD8C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B0017D27B81D2F005FBD8C /* UIView+Extension.swift */; };
+		E3B0018027B82DA6005FBD8C /* SwipeButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B0017F27B82DA6005FBD8C /* SwipeButtonProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E3B0016F27B817D1005FBD8C /* SwipeButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwipeButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B0017227B817D1005FBD8C /* SwipeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipeButton.h; sourceTree = "<group>"; };
+		E3B0017927B818A2005FBD8C /* SwipeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeButton.xib; sourceTree = "<group>"; };
+		E3B0017B27B81959005FBD8C /* SwipeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeButton.swift; sourceTree = "<group>"; };
+		E3B0017D27B81D2F005FBD8C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		E3B0017F27B82DA6005FBD8C /* SwipeButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeButtonProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +54,10 @@
 			isa = PBXGroup;
 			children = (
 				E3B0017227B817D1005FBD8C /* SwipeButton.h */,
+				E3B0017927B818A2005FBD8C /* SwipeButton.xib */,
+				E3B0017B27B81959005FBD8C /* SwipeButton.swift */,
+				E3B0017D27B81D2F005FBD8C /* UIView+Extension.swift */,
+				E3B0017F27B82DA6005FBD8C /* SwipeButtonProtocols.swift */,
 			);
 			path = SwipeButton;
 			sourceTree = "<group>";
@@ -93,6 +105,7 @@
 				TargetAttributes = {
 					E3B0016E27B817D1005FBD8C = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -119,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B0017A27B818A2005FBD8C /* SwipeButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B0018027B82DA6005FBD8C /* SwipeButtonProtocols.swift in Sources */,
+				E3B0017E27B81D2F005FBD8C /* UIView+Extension.swift in Sources */,
+				E3B0017C27B81959005FBD8C /* SwipeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +277,7 @@
 		E3B0017727B817D1005FBD8C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -280,6 +298,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -288,6 +307,7 @@
 		E3B0017827B817D1005FBD8C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
