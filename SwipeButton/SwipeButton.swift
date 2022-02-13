@@ -27,11 +27,13 @@ public class SwipeButton: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNib()
+        setupView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadNib()
+        setupView()
     }
    
     public override func awakeFromNib() {
@@ -127,11 +129,8 @@ fileprivate extension SwipeButton{
         containerView.clipsToBounds = true
         containerView.layer.cornerRadius = containerView.frame.size.height / 2
         
-        
         swipeView.clipsToBounds = true
         swipeView.layer.cornerRadius = swipeView.frame.size.height / 2
-        
-        
     }
 }
 
