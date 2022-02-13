@@ -26,22 +26,34 @@ public class SwipeButton: UIView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        loadNib()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    func commonInit() {
-        Bundle.main.loadNibNamed(swipeButtonXibName, owner: self, options: nil)
-        containerView.setupFromNib(self)
+        loadNib()
     }
    
     public override func awakeFromNib() {
         setupView()
     }
+    
+    internal func loadNib() {
+        let view = getNib()
+        view.frame = bounds
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(view)
+    }
+    
+    internal func getNib() -> UIView {
+        let bundle = Bundle(for: SwipeButton.self)
+        let nib = UINib(nibName: swipeButtonXibName, bundle: bundle)
+        guard let swipeButton = nib.instantiate(withOwner: self, options: nil).first as? UIView else {
+            return UIView()
+        }
+        return swipeButton
+    }
+    
     
     @IBAction func didStartPanGesture(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: self.containerView)
@@ -102,7 +114,7 @@ public class SwipeButton: UIView{
                 self.delegate?.didSwipeLeft()
             }
         default:
-            print("InDefault")
+            print("")
         }
     }
     
@@ -118,6 +130,8 @@ fileprivate extension SwipeButton{
         
         swipeView.clipsToBounds = true
         swipeView.layer.cornerRadius = swipeView.frame.size.height / 2
+        
+        
     }
 }
 
@@ -224,9 +238,6 @@ extension SwipeButton{
             swipeViewImage.contentMode = contentMode
         }
     }
-    
-    
-    
 }
 
 
