@@ -128,9 +128,10 @@ fileprivate extension SwipeButton{
     func setupView(){
         containerView.clipsToBounds = true
         containerView.layer.cornerRadius = containerView.frame.size.height / 2
+        containerView.backgroundColor = .gray
         
         swipeView.clipsToBounds = true
-        swipeView.layer.cornerRadius = swipeView.frame.size.height / 2
+        swipeView.layer.cornerRadius = containerView.frame.size.height / 2
     }
 }
 
