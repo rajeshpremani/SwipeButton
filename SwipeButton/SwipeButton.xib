@@ -29,10 +29,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0L-9s-2OK">
-                    <rect key="frame" x="175" y="8" width="64" height="64"/>
+                    <rect key="frame" x="167" y="0.0" width="80" height="80"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chart.bar.doc.horizontal" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pg7-De-baF">
-                            <rect key="frame" x="8" y="8" width="48" height="48"/>
+                            <rect key="frame" x="10" y="10" width="60" height="60"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -56,7 +56,7 @@
                 <constraint firstItem="e0L-9s-2OK" firstAttribute="centerX" secondItem="AKE-Yb-7DK" secondAttribute="centerX" id="MZ1-Y4-Czl"/>
                 <constraint firstItem="jGB-AX-SAa" firstAttribute="top" secondItem="AKE-Yb-7DK" secondAttribute="top" id="RD8-Sy-deX"/>
                 <constraint firstAttribute="bottom" secondItem="jGB-AX-SAa" secondAttribute="bottom" id="U83-Id-xVs"/>
-                <constraint firstItem="e0L-9s-2OK" firstAttribute="height" secondItem="AKE-Yb-7DK" secondAttribute="height" multiplier="0.8" id="t7D-b9-t2k"/>
+                <constraint firstItem="e0L-9s-2OK" firstAttribute="height" secondItem="AKE-Yb-7DK" secondAttribute="height" id="t7D-b9-t2k"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="325" y="10"/>
