@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class SwipeButton: UIView{
+public class SwipeButton: BaseView {
     
     //MARK: Outlets
     @IBOutlet private var containerView: UIView!
@@ -24,37 +24,29 @@ public class SwipeButton: UIView{
     
     public var delegate:SwipeButtonDeletage?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        loadNib()
-        setupView()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        loadNib()
-        setupView()
-    }
-   
-    public override func awakeFromNib() {
-        setupView()
-    }
-    
-    internal func loadNib() {
-        let view = getNib()
-        view.frame = bounds
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        addSubview(view)
-    }
-    
-    internal func getNib() -> UIView {
-        let bundle = Bundle(for: SwipeButton.self)
-        let nib = UINib(nibName: swipeButtonXibName, bundle: bundle)
-        guard let swipeButton = nib.instantiate(withOwner: self, options: nil).first as? UIView else {
-            return UIView()
+    // MARK: Initializers
+        public override init(frame: CGRect) {
+            super.init(frame: frame)
+            setupFromNib()
         }
-        return swipeButton
-    }
+        
+        // initWithCode to init view from xib or storyboard
+        public required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            setupFromNib()
+        }
+        
+        public override func awakeFromNib() {
+            super.awakeFromNib()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.setupView()
+            }
+        }
+        
+        func setupFromNib() {
+            super.nibName = String(describing: Self.self)
+            super.setupFromNib()
+        }
     
     
     @IBAction func didStartPanGesture(_ gesture: UIPanGestureRecognizer) {
@@ -126,11 +118,14 @@ public class SwipeButton: UIView{
 //MARK: Private Functions
 fileprivate extension SwipeButton{
     func setupView(){
-        containerView.clipsToBounds = true
-        containerView.layer.cornerRadius = containerView.frame.size.height / 2
         
-        swipeView.clipsToBounds = true
+        print("Swipe View Frame \(swipeView.frame)")
         swipeView.layer.cornerRadius = swipeView.frame.size.height / 2
+        swipeView.clipsToBounds = true
+        
+        print("Container View Frame \(containerView.frame)")
+        containerView.layer.cornerRadius = containerView.frame.size.height / 2
+        containerView.clipsToBounds = true
     }
 }
 
@@ -238,6 +233,3 @@ extension SwipeButton{
         }
     }
 }
-
-
-

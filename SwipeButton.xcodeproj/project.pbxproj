@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39937EA427B933EA00119052 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39937EA327B933EA00119052 /* BaseView.swift */; };
 		E3B0017327B817D1005FBD8C /* SwipeButton.h in Headers */ = {isa = PBXBuildFile; fileRef = E3B0017227B817D1005FBD8C /* SwipeButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E3B0017A27B818A2005FBD8C /* SwipeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3B0017927B818A2005FBD8C /* SwipeButton.xib */; };
 		E3B0017C27B81959005FBD8C /* SwipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B0017B27B81959005FBD8C /* SwipeButton.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39937EA327B933EA00119052 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E3B0016F27B817D1005FBD8C /* SwipeButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwipeButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B0017227B817D1005FBD8C /* SwipeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipeButton.h; sourceTree = "<group>"; };
 		E3B0017927B818A2005FBD8C /* SwipeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeButton.xib; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				E3B0017227B817D1005FBD8C /* SwipeButton.h */,
+				39937EA327B933EA00119052 /* BaseView.swift */,
 				E3B0017927B818A2005FBD8C /* SwipeButton.xib */,
 				E3B0017B27B81959005FBD8C /* SwipeButton.swift */,
 				E3B0017D27B81D2F005FBD8C /* UIView+Extension.swift */,
@@ -146,6 +149,7 @@
 				E3B0018027B82DA6005FBD8C /* SwipeButtonProtocols.swift in Sources */,
 				E3B0017E27B81D2F005FBD8C /* UIView+Extension.swift in Sources */,
 				E3B0017C27B81959005FBD8C /* SwipeButton.swift in Sources */,
+				39937EA427B933EA00119052 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

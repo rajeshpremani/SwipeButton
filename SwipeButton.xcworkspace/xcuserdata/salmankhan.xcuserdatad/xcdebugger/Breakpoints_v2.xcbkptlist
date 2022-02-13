@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6DE73E0D-977B-44A2-ACB0-AD4CDAC94D01"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B9C1A44-1911-4E5D-AA44-4BF1736A6310"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwipeButton/SwipeButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "containerViewBackgroundColor(color:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0B9C1A44-1911-4E5D-AA44-4BF1736A6310 - a0d55e279dcc294b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwipeButton.SwipeButton.containerViewBackgroundColor(color: __C.UIColor) -&gt; ()"
+                  moduleName = "SwipeButton"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/salmankhan/Documents/Salman/iOS/SwipeButton/SwipeButton/SwipeButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "0B9C1A44-1911-4E5D-AA44-4BF1736A6310 - a0d55e279dcc296a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwipeButton.SwipeButton.containerViewBackgroundColor(color: __C.UIColor) -&gt; ()"
+                  moduleName = "SwipeButton"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/salmankhan/Documents/Salman/iOS/SwipeButton/SwipeButton/SwipeButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
