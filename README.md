@@ -3,6 +3,9 @@
 
 # Installation
 SwipeButton is available through cocoapods. To install it add the following pod in podfile.<br />
-[copy content="`pod 'SwipeButton'`"]
 
+
+```js
+pod 'SwipeButton'
+```
 
