@@ -16,9 +16,32 @@ You can customize SwipeButton <br />
 ![](https://github.com/rajeshpremani/SwipeButton/blob/main/Example/Assets/DemoDoc.jpeg)
 
 ### ContainerView
-BackgroundColor
+Background Color
 ```js
 self.containerViewBackgroundColor(color: .gray)
 ```
+Corner Redius
+
+Border 
+
+Gradient
+
+Background Image
 
 ### SwipeView
+Background Color
+```js
+self.swipeViewBackgroundColor(color: .gray)
+```
+Corner Redius
+
+Border 
+
+Gradient
+
+Background Image
+
+
+# Delegate
+
+
