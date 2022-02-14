@@ -14,8 +14,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        swipe.swipeViewBackgroundColor(color: .cyan)
+        
+        setView()
+    }
+    
+    
+    func setView(){
+        swipe.containerViewBackgroundColor(color: .blue)
+        swipe.containerViewBackgroundCornerRedius(cornerRadius: 20)
+        swipe.containerViewBorder(borderWidth: 2, with: .red)
+        swipe.containerViewBackgroundImage(image: <#T##UIImage?#>, contentMode: <#T##UIView.ContentMode?#>)
+//        swipe.containerViewGradient(colors: .red,.blue,.cyan, startPoint: .topLeft, endPoint: .bottomRight)
+        
+        
+        swipe.swipeViewBackgroundColor(color: .red)
+        swipe.containerViewBackgroundColor(color: .blue)
     }
 
 

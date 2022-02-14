@@ -25,28 +25,30 @@ public class SwipeButton: BaseView {
     public var delegate:SwipeButtonDeletage?
     
     // MARK: Initializers
-        public override init(frame: CGRect) {
-            super.init(frame: frame)
-            setupFromNib()
-        }
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupFromNib()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupFromNib()
+    }
+    
+    public override func draw(_ rect: CGRect) {
+        setCorners()
+    }
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setupView()
+    }
+    
+    func setupFromNib() {
+        super.nibName = String(describing: Self.self)
+        super.setupFromNib()
         
-        // initWithCode to init view from xib or storyboard
-        public required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-            setupFromNib()
-        }
-        
-        public override func awakeFromNib() {
-            super.awakeFromNib()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                self.setupView()
-            }
-        }
-        
-        func setupFromNib() {
-            super.nibName = String(describing: Self.self)
-            super.setupFromNib()
-        }
+    }
     
     
     @IBAction func didStartPanGesture(_ gesture: UIPanGestureRecognizer) {
@@ -117,15 +119,19 @@ public class SwipeButton: BaseView {
 
 //MARK: Private Functions
 fileprivate extension SwipeButton{
-    func setupView(){
-        
-        print("Swipe View Frame \(swipeView.frame)")
+    
+    func setCorners(){
         swipeView.layer.cornerRadius = swipeView.frame.size.height / 2
         swipeView.clipsToBounds = true
         
-        print("Container View Frame \(containerView.frame)")
         containerView.layer.cornerRadius = containerView.frame.size.height / 2
         containerView.clipsToBounds = true
+    }
+    
+    func setupView(){
+        self.backgroundColor = .clear
+        containerView.backgroundColor = .systemGreen
+        swipeView.backgroundColor = .cyan
     }
 }
 
@@ -178,7 +184,7 @@ extension SwipeButton{
         self.containerView.layer.cornerRadius = cornerRadius
     }
     
-    public func containerViewBackgroundBorder(borderWidth: CGFloat, with color: UIColor?){
+    public func containerViewBorder(borderWidth: CGFloat, with color: UIColor?){
         self.containerView.layer.borderWidth = borderWidth
         self.containerView.layer.borderColor = color?.cgColor
     }
