@@ -22,16 +22,27 @@
                                     <constraint firstAttribute="height" constant="60" id="l1w-Jc-Gyk"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wl-JO-Gih">
+                                <rect key="frame" x="10" y="54" width="394" height="60"/>
+                                <color key="backgroundColor" red="0.1333333333" green="0.4431372549" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="FfH-IY-OZb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="9wl-JO-Gih" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Jh5-iU-fYV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wOv-pl-uMG" secondAttribute="trailing" constant="30" id="S1M-fK-ged"/>
                             <constraint firstItem="wOv-pl-uMG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="TEq-hy-KhW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9wl-JO-Gih" secondAttribute="trailing" constant="10" id="Vn8-tE-SLQ"/>
+                            <constraint firstItem="9wl-JO-Gih" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="fu7-rZ-vUp"/>
                             <constraint firstItem="wOv-pl-uMG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uZw-uN-w9R"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="gradient" destination="9wl-JO-Gih" id="TY8-WE-XqN"/>
                         <outlet property="swipe" destination="wOv-pl-uMG" id="Rk7-dZ-iCG"/>
                     </connections>
                 </viewController>

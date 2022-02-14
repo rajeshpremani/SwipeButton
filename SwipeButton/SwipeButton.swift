@@ -133,6 +133,19 @@ fileprivate extension SwipeButton{
         containerView.backgroundColor = .systemGreen
         swipeView.backgroundColor = .cyan
     }
+    
+    func getGradientLayer(colors: [UIColor], startPoint: Point, endPoint: Point) -> CAGradientLayer{
+        let gradientLayer = CAGradientLayer()
+        var cgColurs = [CGColor]()
+        for colur in colors {
+            cgColurs.append(colur.cgColor)
+        }
+        gradientLayer.colors = cgColurs
+        gradientLayer.startPoint = startPoint.point
+        gradientLayer.endPoint = endPoint.point
+        gradientLayer.locations = [0, 1]
+        return gradientLayer
+    }
 }
 
 
@@ -189,14 +202,10 @@ extension SwipeButton{
         self.containerView.layer.borderColor = color?.cgColor
     }
 
-    public func containerViewGradient(colors:UIColor..., startPoint: Point, endPoint: Point){
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = colors
-        gradientLayer.startPoint = startPoint.point
-        gradientLayer.endPoint = endPoint.point
-        gradientLayer.locations = [0, 1]
-        gradientLayer.frame = bounds
-        containerView.layer.addSublayer(gradientLayer)
+    public func containerViewGradient(colors: [UIColor], startPoint: Point, endPoint: Point){
+        let gradientLayer = getGradientLayer(colors: colors, startPoint: startPoint, endPoint: endPoint)
+        gradientLayer.frame = containerView.bounds
+        containerView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     public func containerViewBackgroundImage(image: UIImage?, contentMode: UIView.ContentMode?){
@@ -223,13 +232,9 @@ extension SwipeButton{
     }
 
     public func swipeViewGradient(colors:UIColor..., startPoint: Point, endPoint: Point){
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = colors
-        gradientLayer.startPoint = startPoint.point
-        gradientLayer.endPoint = endPoint.point
-        gradientLayer.locations = [0, 1]
+        let gradientLayer = getGradientLayer(colors: colors, startPoint: startPoint, endPoint: endPoint)
         gradientLayer.frame = bounds
-        swipeView.layer.addSublayer(gradientLayer)
+        swipeView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     public func swipeViewBackgroundImage(image: UIImage?, contentMode: UIView.ContentMode?){
