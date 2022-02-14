@@ -13,12 +13,10 @@ To see a quick demo, simply open Example project. Or set the custom class of vie
 
 # Customization
 You can customize SwipeButton <br />
-![](https://github.com/rajeshpremani/SwipeButton/blob/main/Example/Assets/DemoDoc.gif)
+![](https://github.com/rajeshpremani/SwipeButton/blob/main/Example/Assets/DemoDoc.jpeg)
 
 ### ContainerView
-```
 BackgroundColor
-```
 ```js
 self.containerViewBackgroundColor(color: .gray)
 ```
