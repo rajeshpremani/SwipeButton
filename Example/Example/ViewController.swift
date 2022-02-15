@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     func setView(){
 //        swipe.containerViewBackgroundColor(color: .blue)
-        swipe.containerViewBackgroundCornerRedius(cornerRadius: 20)
+        
         swipe.containerViewBorder(borderWidth: 2, with: .red)
 //        containerViewGradient(colors: [.cyan, .blue])
 //        swipe.containerViewBackgroundImage(image: UIImage(named: "imageName"), contentMode: nil)

@@ -192,11 +192,6 @@ extension SwipeButton{
         self.containerView.backgroundColor = color
     }
     
-    public func containerViewBackgroundCornerRedius(cornerRadius: CGFloat){
-        self.containerView.clipsToBounds = true
-        self.containerView.layer.cornerRadius = cornerRadius
-    }
-    
     public func containerViewBorder(borderWidth: CGFloat, with color: UIColor?){
         self.containerView.layer.borderWidth = borderWidth
         self.containerView.layer.borderColor = color?.cgColor
@@ -219,11 +214,6 @@ extension SwipeButton{
     //MARK: SwipeView
     public func swipeViewBackgroundColor(color: UIColor){
         self.swipeView.backgroundColor = color
-    }
-    
-    public func swipeViewBackgroundCornerRedius(cornerRadius: CGFloat){
-        self.swipeView.clipsToBounds = true
-        self.containerView.layer.cornerRadius = cornerRadius
     }
     
     public func swipeViewBackgroundBorder(borderWidth: CGFloat, with color: UIColor?){
