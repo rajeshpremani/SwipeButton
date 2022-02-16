@@ -21,29 +21,9 @@ class ViewController: UIViewController {
     
     
     func setView(){
-//        swipe.containerViewBackgroundColor(color: .blue)
         
-        swipe.containerViewBorder(borderWidth: 2, with: .red)
-//        containerViewGradient(colors: [.cyan, .blue])
-//        swipe.containerViewBackgroundImage(image: UIImage(named: "imageName"), contentMode: nil)
-//        swipe.containerViewGradient(colors: [.red,.cyan], startPoint: .topLeft, endPoint: .bottomRight)
-//
-//
-//        swipe.swipeViewBackgroundColor(color: .red)
-//        swipe.containerViewBackgroundColor(color: .blue)
-        
-        swipe.swipeViewGradient(colors: .blue,.orange, startPoint: .bottomRight, endPoint: .topLeft)
-    }
-
-
-    func containerViewGradient(colors: [CGColor]) {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame.size = gradient.bounds.size
-        gradientLayer.colors = colors
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        
-        gradient.layer.addSublayer(gradientLayer)
+//        swipe.containerViewBorder(borderWidth: 2, with: .red)
+//        swipe.swipeViewGradient(colors: .blue,.orange, startPoint: .bottomRight, endPoint: .topLeft)
     }
 }
 

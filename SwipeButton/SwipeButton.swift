@@ -16,12 +16,18 @@ public class SwipeButton: BaseView {
     @IBOutlet private weak var swipeViewImage: UIImageView!
     @IBOutlet weak var containerViewImage: UIImageView!
     
+    @IBOutlet weak var leftViewWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var rightView: UIView!
+    @IBOutlet weak var leftView: UIView!
+    
+    
     
     //MARK: Constants
     private let swipeButtonXibName = "SwipeButton"
     private var leftPass:Bool = false
     private var rightPass:Bool = false
-    
+
     public var delegate:SwipeButtonDeletage?
     
     // MARK: Initializers
@@ -47,7 +53,6 @@ public class SwipeButton: BaseView {
     func setupFromNib() {
         super.nibName = String(describing: Self.self)
         super.setupFromNib()
-        
     }
     
     
@@ -57,7 +62,37 @@ public class SwipeButton: BaseView {
         gesture.setTranslation(CGPoint.zero, in: self.containerView)
         
         switch gesture.state {
+        case .began:
+            print("Begin",swipeView.frame.midX)
+            
+            if self.swipeView.frame.midX  >= self.containerView.frame.midX && self.swipeView.frame.midX <= self.containerView.frame.size.width - (self.containerView.frame.size.width / 4){
+                
+                self.containerView.insertSubview(leftView, aboveSubview: rightView)
+                self.containerView.backgroundColor = leftView.backgroundColor
+                
+            }else if self.swipeView.frame.midX <= self.containerView.frame.midX && self.swipeView.frame.midX >= self.containerView.frame.size.width / 4 {
+                
+                self.containerView.backgroundColor = rightView.backgroundColor
+                self.containerView.insertSubview(rightView, aboveSubview: leftView)
+            }
         case .changed:
+            if self.swipeView.frame.midX  >= self.containerView.frame.midX {
+                
+                let width = self.leftView.frame.width
+                let x = self.swipeView.frame.midX - width
+
+                self.leftView.transform = CGAffineTransform(translationX: x, y: 0)
+                self.leftView.layer.frame.size.width = width + x
+                
+            }else{
+                
+                let width = self.rightView.frame.width
+                let x = self.swipeView.frame.midX - width
+                
+                self.rightView.transform = CGAffineTransform(translationX: x, y: 0)
+//                self.rightView.layer.frame.size.width = width + abs(x)
+            }
+            
             
             if self.swipeView.frame.maxX  >= self.containerView.frame.size.width - (self.containerView.frame.size.width / 4)
                 && self.swipeView.frame.midX <= self.containerView.frame.size.width - (self.containerView.frame.size.width / 4){
@@ -66,7 +101,6 @@ public class SwipeButton: BaseView {
             }else if self.swipeView.frame.minX <= self.containerView.frame.size.width / 4 && self.swipeView.frame.midX >= self.containerView.frame.size.width / 4{
                 leftPass = true
             }
-
             
             if self.swipeView.frame.maxX  >= self.containerView.frame.size.width{
                 gesture.isEnabled = false

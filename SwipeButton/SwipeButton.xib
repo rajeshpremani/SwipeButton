@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -10,6 +11,9 @@
             <connections>
                 <outlet property="containerView" destination="AKE-Yb-7DK" id="4ZF-zl-eoc"/>
                 <outlet property="containerViewImage" destination="jGB-AX-SAa" id="yVE-an-Q56"/>
+                <outlet property="leftView" destination="5cR-Ct-m37" id="o22-sM-a4C"/>
+                <outlet property="leftViewWidth" destination="5a7-ZS-bzh" id="XnD-O1-1Lw"/>
+                <outlet property="rightView" destination="aMu-Ox-OEg" id="cwk-q3-0lP"/>
                 <outlet property="swipeView" destination="e0L-9s-2OK" id="XOS-7j-KMw"/>
                 <outlet property="swipeViewImage" destination="pg7-De-baF" id="hxF-Fj-E9t"/>
             </connections>
@@ -27,10 +31,18 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jGB-AX-SAa">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMu-Ox-OEg">
+                    <rect key="frame" x="207" y="0.0" width="207" height="80"/>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cR-Ct-m37">
+                    <rect key="frame" x="0.0" y="0.0" width="207" height="80"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0L-9s-2OK">
                     <rect key="frame" x="167" y="0.0" width="80" height="80"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chart.bar.doc.horizontal" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pg7-De-baF">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swipeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="pg7-De-baF">
                             <rect key="frame" x="10" y="10" width="60" height="60"/>
                         </imageView>
                     </subviews>
@@ -47,12 +59,20 @@
                 </view>
             </subviews>
             <constraints>
+                <constraint firstItem="5cR-Ct-m37" firstAttribute="width" secondItem="AKE-Yb-7DK" secondAttribute="width" multiplier="0.5" id="5a7-ZS-bzh"/>
                 <constraint firstItem="e0L-9s-2OK" firstAttribute="centerY" secondItem="AKE-Yb-7DK" secondAttribute="centerY" id="6U0-D7-7KQ"/>
                 <constraint firstItem="jGB-AX-SAa" firstAttribute="leading" secondItem="AKE-Yb-7DK" secondAttribute="leading" id="9hC-c3-CW8"/>
+                <constraint firstItem="aMu-Ox-OEg" firstAttribute="top" secondItem="AKE-Yb-7DK" secondAttribute="top" id="ByX-bs-J4K"/>
+                <constraint firstItem="5cR-Ct-m37" firstAttribute="top" secondItem="AKE-Yb-7DK" secondAttribute="top" id="HE8-7H-yLz"/>
                 <constraint firstAttribute="trailing" secondItem="jGB-AX-SAa" secondAttribute="trailing" id="InM-3l-hEB"/>
                 <constraint firstItem="e0L-9s-2OK" firstAttribute="centerX" secondItem="AKE-Yb-7DK" secondAttribute="centerX" id="MZ1-Y4-Czl"/>
                 <constraint firstItem="jGB-AX-SAa" firstAttribute="top" secondItem="AKE-Yb-7DK" secondAttribute="top" id="RD8-Sy-deX"/>
                 <constraint firstAttribute="bottom" secondItem="jGB-AX-SAa" secondAttribute="bottom" id="U83-Id-xVs"/>
+                <constraint firstAttribute="bottom" secondItem="5cR-Ct-m37" secondAttribute="bottom" id="YmA-0r-ev7"/>
+                <constraint firstItem="5cR-Ct-m37" firstAttribute="leading" secondItem="AKE-Yb-7DK" secondAttribute="leading" id="a6q-Hr-AoP"/>
+                <constraint firstAttribute="bottom" secondItem="aMu-Ox-OEg" secondAttribute="bottom" id="aB6-bV-tar"/>
+                <constraint firstItem="aMu-Ox-OEg" firstAttribute="width" secondItem="AKE-Yb-7DK" secondAttribute="width" multiplier="0.5" id="cWd-4N-5YD"/>
+                <constraint firstAttribute="trailing" secondItem="aMu-Ox-OEg" secondAttribute="trailing" id="oWe-K3-QzI"/>
                 <constraint firstItem="e0L-9s-2OK" firstAttribute="height" secondItem="AKE-Yb-7DK" secondAttribute="height" id="t7D-b9-t2k"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -60,6 +80,12 @@
         </view>
     </objects>
     <resources>
-        <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
+        <image name="swipeIcon" width="28" height="34.5"/>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
