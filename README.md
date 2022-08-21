@@ -1,5 +1,6 @@
 # SwipeButton
 Swipe button left or right to perform actions.
+
 ![Sample](https://github.com/rajeshpremani/SwipeButton/blob/main/Example/Assets/demo.gif)
 
 # Installation
